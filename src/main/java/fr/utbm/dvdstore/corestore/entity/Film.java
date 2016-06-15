@@ -13,7 +13,16 @@ public class Film {
     private Integer nbExemplaires;
     private Acteur acteurPrincipal;
     private Set<Acteur> acteursSecondaires;
+    private Integer idFilm;
 
+    public Integer getIdFilm() {
+        return idFilm;
+    }
+
+    public void setIdFilm(Integer idFilm) {
+        this.idFilm = idFilm;
+    }
+    
     public String getTitre() {
         return titre;
     }

@@ -8,7 +8,16 @@ public class Acteur {
     
     private String nom;
     private String prenom;
+    private Integer idActeur;
 
+    public Integer getIdActeur() {
+        return idActeur;
+    }
+
+    public void setIdActeur(Integer idActeur) {
+        this.idActeur = idActeur;
+    }
+    
     public String getNom() {
         return nom;
     }

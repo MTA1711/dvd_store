@@ -11,6 +11,15 @@ public class FilmDefaultDto {
     private String titre;
     private String genre;
     private Integer nbExemplaires;
+    private Integer idFilm;
+
+    public Integer getIdFilm() {
+        return idFilm;
+    }
+
+    public void setIdFilm(Integer idFilm) {
+        this.idFilm = idFilm;
+    }
 
     public String getTitre() {
         return titre;
