@@ -65,7 +65,16 @@ public class Film {
 
     @Override
     public String toString() {
-        return "Film{ID=" + idFilm + ", titre=" + titre + ", genre=" + genre + ", nbExemplaires=" + nbExemplaires + ", acteurPrincipal=" + acteurPrincipal + '}';
+        String ac2 = "";
+        int i = 0;
+        for (Acteur a : acteursSecondaires){
+            if (i == 0){
+                ac2 += a.toString();
+            }else{
+                ac2 += ", " + a.toString();
+            }          
+        }
+        return "Film{ID=" + idFilm + ", titre=" + titre + ", genre=" + genre + ", nbExemplaires=" + nbExemplaires + ", acteurPrincipal=" + acteurPrincipal + ", acteursSecondaires="+ac2+ '}';
     }    
     
 }
