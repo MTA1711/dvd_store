@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class  name="fr.utbm.dvdstore.corestore.entity.Film" table="MOVIE">
+      <id name ="idFilm" column="ID">
+          <generator class="identity"/>
+      </id>
+      <property name="titre" column="TITLE" not-null="true" type="string" />
+      <property name="genre" column="MOVIE_TYPE" not-null="true" type="string" />
+      <property name="nbExemplaires" column="COPIES" not-null="true" type="integer" />
+  </class>
+</hibernate-mapping>

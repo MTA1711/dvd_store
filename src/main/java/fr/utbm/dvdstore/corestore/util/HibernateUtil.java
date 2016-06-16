@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
  *
  * @author java
  */
-public class HibernatUtil {
+public class HibernateUtil {
     private static final SessionFactory sessionFactory = buildSessionFactory();
     private static SessionFactory buildSessionFactory() {
         try {

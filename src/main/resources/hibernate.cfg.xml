@@ -4,17 +4,17 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/java</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/DVD_STORE</property>
     <property name="hibernate.connection.username">java</property>
     <property name="hibernate.connection.password">java</property>
-    
-    
-   <property name="current_session_context_class">thread</property>
+    <property name="current_session_context_class">thread</property>
     <!-- Disable the second-level cache  -->
     <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
-    
     <!-- Echo all executed SQL to stdout -->
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
+    <!--<property name="hibernate.hbm2ddl.auto">validate</property>-->
+    <mapping resource="Acteur.hbm.xml"/>
+    <mapping resource="Film.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

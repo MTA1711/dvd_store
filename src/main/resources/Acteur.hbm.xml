@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="fr.utbm.dvdstore.corestore.entity">
+    <class name="Acteur" table="ACTOR">
+        <id name="idActeur" column="ID">
+            <generator class="identity" />
+        </id>
+        <property name="prenom" column="FIRSTNAME" not-null="true" type="string" />
+        <property name="nom" column="LASTNAME" not-null="true" type="string" />
+    </class>
+</hibernate-mapping>
