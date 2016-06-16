@@ -11,17 +11,8 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class App {
     public static void main(String[] args) throws IllegalAccessException, InvocationTargetException{
-        
-        DefaultFilmService s = new DefaultFilmService();
+               
         DefaultFilmController c = new DefaultFilmController();
-        FilmDefaultDto f1 ;
-        /*
-        FilmDefaultDto f1 = new FilmDefaultDto();
-        f1.setTitre("Naruto the movie");
-        f1.setGenre("mangas");
-        f1.setNbExemplaires(50);*/
-        f1 = c.recordFilmFromConsoleInput();
-        s.recordFilmUsingDefaultDto(f1);
-              
+        c.recordFilmFromConsoleInput();                 
     }
 }

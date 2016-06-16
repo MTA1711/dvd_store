@@ -11,9 +11,10 @@ import java.util.Scanner;
  */
 public class DefaultFilmController {
     
-    public FilmDefaultDto recordFilmFromConsoleInput(){
+    public void recordFilmFromConsoleInput(){
         Scanner sc=new Scanner(System.in);
         FilmDefaultDto f1 = new FilmDefaultDto();
+        DefaultFilmService s = new DefaultFilmService();
         
         System.out.println("Quel est le titre du film ?");
         String nom=sc.next();
@@ -25,8 +26,7 @@ public class DefaultFilmController {
         f1.setTitre(nom);
         f1.setGenre(genre);
         f1.setNbExemplaires(nbe);
-        
-        return f1;
+        s.recordFilmUsingDefaultDto(f1);
     }
     
     public void getFilmFromConsoleInput(){
