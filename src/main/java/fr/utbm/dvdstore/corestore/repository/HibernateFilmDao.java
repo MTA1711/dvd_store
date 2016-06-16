@@ -39,4 +39,35 @@ public class HibernateFilmDao {
             }
         }
     }
+    
+    public Film find(int id) {
+        Film f = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            f = (Film) session.get(Film.class, id);
+            transaction.commit();
+            System.out.println("DAO----> "+f);
+        } catch (HibernateException he) {
+            if (transaction != null) {
+                he.printStackTrace();
+                try {
+                    transaction.rollback();
+                } catch (HibernateException he2) {
+                    he2.printStackTrace();
+                }
+            }
+        } finally {
+            if (session != null) {
+                try {
+                    session.close();
+                } catch (HibernateException he) {
+                    he.printStackTrace();
+                }
+            }
+        }
+        return f;
+    }
+    
 }

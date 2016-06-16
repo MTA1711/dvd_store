@@ -20,4 +20,11 @@ public class DefaultFilmService {
         System.out.println(f);
         h.save(f);
     }
+    
+    public Film getFilm (int id){
+        Film f = null;
+        HibernateFilmDao h = new HibernateFilmDao();
+        f = h.find(id);
+        return f;
+    }
 }

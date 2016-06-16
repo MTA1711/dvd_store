@@ -1,6 +1,8 @@
 package fr.utbm.dvdstore.corestore.controller;
 
 import fr.utbm.dvdstore.corestore.dto.FilmDefaultDto;
+import fr.utbm.dvdstore.corestore.entity.Film;
+import fr.utbm.dvdstore.corestore.service.DefaultFilmService;
 import java.util.Scanner;
 
 /**
@@ -25,5 +27,17 @@ public class DefaultFilmController {
         f1.setNbExemplaires(nbe);
         
         return f1;
+    }
+    
+    public void getFilmFromConsoleInput(){
+        Scanner sc=new Scanner(System.in);
+        Film f1 = null;
+        DefaultFilmService s = new DefaultFilmService();
+        
+        System.out.println("Quel est l'identifiant du film ?");      
+        Integer nbe = Integer.parseInt(sc.next());       
+        f1 = s.getFilm(nbe);      
+        System.out.println("Film trouvé : ");
+        System.out.println(f1);
     }
 }
