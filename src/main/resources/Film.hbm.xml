@@ -5,14 +5,14 @@
       <id name ="idFilm" column="ID">
           <generator class="identity"/>
       </id>
-      <property name="titre" column="TITLE" not-null="true" type="string" />
+      <property name="titre" column="TITLE" not-null="true" type="string"  />
       <property name="genre" column="MOVIE_TYPE" not-null="true" type="string" />
       <property name="nbExemplaires" column="COPIES" not-null="true" type="integer" />
       
-      <many-to-one name="acteurPrincipal" column="MAIN_ACTOR_ID"  />
-      <set name="acteursSecondaires" table="MOVIE_SEC_ACTORS" lazy="true">
+      <many-to-one name="acteurPrincipal" column="MAIN_ACTOR_ID" lazy="proxy" />
+      <set name="acteursSecondaires" table="MOVIE_SEC_ACTORS" >
           <key column="ID_MOVIE" />
-          <many-to-many class="fr.utbm.dvdstore.corestore.entity.Acteur" column="ID_ACTOR" />
+          <many-to-many class="fr.utbm.dvdstore.corestore.entity.Acteur" column="ID_ACTOR" lazy="proxy" />
       </set>
   </class>
 </hibernate-mapping>
