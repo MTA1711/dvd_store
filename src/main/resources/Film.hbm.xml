@@ -9,7 +9,7 @@
       <property name="genre" column="MOVIE_TYPE" not-null="true" type="string" />
       <property name="nbExemplaires" column="COPIES" not-null="true" type="integer" />
       
-      <many-to-one name="acteurPrincipal" column="MAIN_ACTOR_ID" lazy="proxy" />
+      <many-to-one name="acteurPrincipal" column="MAIN_ACTOR_ID" lazy="proxy"  cascade="persist,save-update,merge"/>
       <set name="acteursSecondaires" table="MOVIE_SEC_ACTORS" >
           <key column="ID_MOVIE" />
           <many-to-many class="fr.utbm.dvdstore.corestore.entity.Acteur" column="ID_ACTOR" lazy="proxy" />

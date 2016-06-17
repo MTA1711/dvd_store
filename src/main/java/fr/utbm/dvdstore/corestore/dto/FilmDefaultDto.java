@@ -1,5 +1,8 @@
 package fr.utbm.dvdstore.corestore.dto;
 
+import fr.utbm.dvdstore.corestore.entity.Acteur;
+import java.util.Set;
+
 /**
  * DTO for Film
  * @author java
@@ -11,6 +14,8 @@ public class FilmDefaultDto {
     private String titre;
     private String genre;
     private Integer nbExemplaires;
+    private Acteur acteurPrincipal;
+    private Set<Acteur> acteursSecondaires;
     private Integer idFilm;
 
     public Integer getIdFilm() {
@@ -45,9 +50,36 @@ public class FilmDefaultDto {
         this.nbExemplaires = nbExemplaires;
     }
 
+    public Acteur getActeurPrincipal() {
+        return acteurPrincipal;
+    }
+
+    public void setActeurPrincipal(Acteur acteurPrincipal) {
+        this.acteurPrincipal = acteurPrincipal;
+    }
+
+    public Set<Acteur> getActeursSecondaires() {
+        return acteursSecondaires;
+    }
+
+    public void setActeursSecondaires(Set<Acteur> acteursSecondaires) {
+        this.acteursSecondaires = acteursSecondaires;
+    }
+
     @Override
     public String toString() {
-        return "FilmDefaultDto{" + "titre=" + titre + ", genre=" + genre + ", nbExemplaires=" + nbExemplaires + '}';
+        String ac2 = "";
+        int i = 0;
+        if ( acteursSecondaires != null ){
+            for (Acteur a : acteursSecondaires){
+                if (i == 0){
+                    ac2 += a.toString();
+                }else{
+                    ac2 += ", " + a.toString();
+                }          
+            }
+        }
+        return "FilmDto{ID=" + idFilm + ", titre=" + titre + ", genre=" + genre + ", nbExemplaires=" + nbExemplaires + ", acteurPrincipal=" + acteurPrincipal + ", acteursSecondaires="+ac2+ '}';
     }
     
 }

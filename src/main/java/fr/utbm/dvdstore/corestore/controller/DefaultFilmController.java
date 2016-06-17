@@ -1,6 +1,7 @@
 package fr.utbm.dvdstore.corestore.controller;
 
 import fr.utbm.dvdstore.corestore.dto.FilmDefaultDto;
+import fr.utbm.dvdstore.corestore.entity.Acteur;
 import fr.utbm.dvdstore.corestore.entity.Film;
 import fr.utbm.dvdstore.corestore.service.DefaultFilmService;
 import java.util.Scanner;
@@ -14,6 +15,7 @@ public class DefaultFilmController {
     public void recordFilmFromConsoleInput(){
         Scanner sc=new Scanner(System.in);
         FilmDefaultDto f1 = new FilmDefaultDto();
+        Acteur a1 = new Acteur();
         DefaultFilmService s = new DefaultFilmService();
         
         System.out.println("Quel est le titre du film ?");
@@ -22,10 +24,20 @@ public class DefaultFilmController {
         String genre = sc.next();
         System.out.println("Quel est le nombre d'exemplaire ?");
         Integer nbe = Integer.parseInt(sc.next());
-        
         f1.setTitre(nom);
         f1.setGenre(genre);
         f1.setNbExemplaires(nbe);
+        
+        System.out.println("Nom acteur principal ?");
+        String nomActeur = sc.next();
+        System.out.println("Prenom acteur principal ?");
+        String prenom  = sc.next();
+        a1.setNom(nomActeur);
+        a1.setPrenom(prenom);
+        f1.setActeurPrincipal(a1);
+        
+        //System.out.println("Combien act");
+        
         s.recordFilmUsingDefaultDto(f1);
     }
     
