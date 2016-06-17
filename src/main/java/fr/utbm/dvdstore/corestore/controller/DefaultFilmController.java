@@ -4,7 +4,9 @@ import fr.utbm.dvdstore.corestore.dto.FilmDefaultDto;
 import fr.utbm.dvdstore.corestore.entity.Acteur;
 import fr.utbm.dvdstore.corestore.entity.Film;
 import fr.utbm.dvdstore.corestore.service.DefaultFilmService;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * 
@@ -36,7 +38,21 @@ public class DefaultFilmController {
         a1.setPrenom(prenom);
         f1.setActeurPrincipal(a1);
         
-        //System.out.println("Combien act");
+        System.out.println("Combien acteur secondaires");
+        Integer nbeSec = Integer.parseInt(sc.next());
+        
+        if (nbeSec > 0){
+            Set<Acteur> list = new HashSet<>();
+            for (int j= 1 ; j <=nbeSec ; j++){
+                Acteur as = new Acteur();
+                System.out.println("Nom acteur secondaire "+ j +" ?" );
+                as.setNom(sc.next());
+                System.out.println("prenom acteur secondaire "+ j +" ?" );
+                as.setPrenom(sc.next());
+                list.add(as);
+            }
+            f1.setActeursSecondaires(list);
+        }
         
         s.recordFilmUsingDefaultDto(f1);
     }
