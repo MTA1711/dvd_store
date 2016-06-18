@@ -1,16 +1,17 @@
 package fr.utbm.dvdstore.corestore.test;
 
 import fr.utbm.dvdstore.corestore.controller.DefaultFilmController;
-import java.lang.reflect.InvocationTargetException;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
  * @author java
  */
 public class App {
-    public static void main(String[] args) throws IllegalAccessException, InvocationTargetException{
-               
-        DefaultFilmController c = new DefaultFilmController();
-        c.recordFilmFromConsoleInput();                 
+    public static void main(String[] args){             
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        DefaultFilmController fc = (DefaultFilmController) context.getBean("defaultFilmController"); 
+        fc.recordFilmFromConsoleInput();
     }
 }

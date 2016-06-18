@@ -76,4 +76,13 @@ public class DefaultFilmController {
             System.out.println(f.getTitre());
         }
     }
+
+    public FilmServiceInterface getFilmService() {
+        return filmService;
+    }
+
+    public void setFilmService(FilmServiceInterface filmService) {
+        this.filmService = filmService;
+    }
+    
 }

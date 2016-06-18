@@ -7,11 +7,11 @@
     <bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.JdbcFilmDao" />
    
     <bean id="defaultFilmService" class="fr.utbm.dvdstore.corestore.service.DefaultFilmService"> 
-        <property name="filmDao" ref="filmRepository" >
+        <property name="filmDao" ref="filmRepository" />
     </bean>
     
     <bean id= "defaultFilmController"  class="fr.utbm.dvdstore.corestore.controller.DefaultFilmController">
-        <property name="filmService" ref="defaultFilmService">
+        <property name="filmService" ref="defaultFilmService"/>
     </bean>
     
 </beans>
