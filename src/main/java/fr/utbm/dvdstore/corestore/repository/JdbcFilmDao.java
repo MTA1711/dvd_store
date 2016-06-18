@@ -2,10 +2,12 @@ package fr.utbm.dvdstore.corestore.repository;
 
 
 import com.mysql.jdbc.Connection;
+import fr.utbm.dvdstore.corestore.dto.FilmLightDto;
 import fr.utbm.dvdstore.corestore.entity.Film;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author java
  */
-public class JdbcFilmDao {
+public class JdbcFilmDao implements FilmDaoInterface{
 
     private Connection getConnection() {
         Connection con = null;
@@ -28,6 +30,7 @@ public class JdbcFilmDao {
         return con;
     }
     
+    @Override
     public void save(Film f) {
         Connection con = this.getConnection();
         if ( con != null){
@@ -44,5 +47,17 @@ public class JdbcFilmDao {
         }else{
             System.out.println("Impossible de se connecter à la BD ");
         }
+    }
+
+    @Override
+    public Film find(int id) {
+        Film f = null;
+        return f;
+    }
+
+    @Override
+    public List<FilmLightDto> findAll() {
+        List<FilmLightDto> listFilmL = null;
+        return listFilmL;
     }
 }

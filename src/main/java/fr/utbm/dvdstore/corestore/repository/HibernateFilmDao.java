@@ -15,8 +15,9 @@ import org.hibernate.Transaction;
  *
  * @author java
  */
-public class HibernateFilmDao {
+public class HibernateFilmDao implements FilmDaoInterface{
 
+    @Override
     public void save(Film f) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -45,6 +46,7 @@ public class HibernateFilmDao {
         }
     }
     
+    @Override
     public Film find(int id) {
         Film f = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -75,6 +77,7 @@ public class HibernateFilmDao {
         return f;
     }
     
+    @Override
     public List<FilmLightDto> findAll(){
         List<FilmLightDto> listFilmLight = new ArrayList<>();
         Session session = HibernateUtil.getSessionFactory().openSession();
