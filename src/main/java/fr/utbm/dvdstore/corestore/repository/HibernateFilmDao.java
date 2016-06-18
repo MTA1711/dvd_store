@@ -81,7 +81,7 @@ public class HibernateFilmDao {
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from Film");
+            Query query = session.createQuery("from Film f order by f.titre");
             List<Film> listfilm = query.list();
             transaction.commit();
             
