@@ -1,10 +1,12 @@
 package fr.utbm.dvdstore.corestore.service;
 
 import fr.utbm.dvdstore.corestore.dto.FilmDefaultDto;
+import fr.utbm.dvdstore.corestore.dto.FilmLightDto;
 import fr.utbm.dvdstore.corestore.entity.Film;
 import fr.utbm.dvdstore.corestore.repository.HibernateFilmDao;
 import fr.utbm.dvdstore.corestore.repository.JdbcFilmDao;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.beanutils.BeanUtils;
@@ -34,5 +36,10 @@ public class DefaultFilmService {
         HibernateFilmDao h = new HibernateFilmDao();
         f = h.find(id);
         return f;
+    }
+    
+    public List<FilmLightDto> getAllFilm(){
+        HibernateFilmDao h = new HibernateFilmDao();
+        return h.findAll();
     }
 }

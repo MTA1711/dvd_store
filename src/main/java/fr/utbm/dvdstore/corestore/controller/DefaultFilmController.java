@@ -1,6 +1,7 @@
 package fr.utbm.dvdstore.corestore.controller;
 
 import fr.utbm.dvdstore.corestore.dto.FilmDefaultDto;
+import fr.utbm.dvdstore.corestore.dto.FilmLightDto;
 import fr.utbm.dvdstore.corestore.entity.Acteur;
 import fr.utbm.dvdstore.corestore.entity.Film;
 import fr.utbm.dvdstore.corestore.service.DefaultFilmService;
@@ -67,5 +68,13 @@ public class DefaultFilmController {
         f1 = s.getFilm(nbe);      
         System.out.println("Film trouvé : ");
         System.out.println(f1);
+    }
+    
+    public void listAllFilmsToConsoleOutput(){
+        DefaultFilmService s = new DefaultFilmService();
+        System.out.println("Liste des films stockés");
+        for ( FilmLightDto  f : s.getAllFilm() ){
+            System.out.println(f.getTitre());
+        }
     }
 }
