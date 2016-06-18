@@ -22,6 +22,10 @@ public class JdbcFilmDao implements FilmDaoInterface{
     private String user;
     private String pwd;
     
+    public JdbcFilmDao(){
+        System.out.println("--> constructoc JdbcFilmDao call");
+    }
+    
     private Connection getConnection() {
         Connection con = null;
         try {

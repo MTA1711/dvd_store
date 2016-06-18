@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
      
-    <bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.JdbcFilmDao" >
+    <bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.JdbcFilmDao" scope="prototype">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/DVD_STORE"/>
         <property name="user" value="java"/>
@@ -12,6 +12,10 @@
     </bean>
     
     <bean id="defaultFilmService" class="fr.utbm.dvdstore.corestore.service.DefaultFilmService"> 
+        <property name="filmDao" ref="filmRepository" />
+    </bean>
+    
+    <bean id="defaultFilmService2" class="fr.utbm.dvdstore.corestore.service.DefaultFilmService"> 
         <property name="filmDao" ref="filmRepository" />
     </bean>
     
