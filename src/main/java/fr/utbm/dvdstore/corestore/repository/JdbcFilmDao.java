@@ -26,6 +26,11 @@ public class JdbcFilmDao implements FilmDaoInterface{
         System.out.println("--> constructoc JdbcFilmDao call");
     }
     
+    public JdbcFilmDao(String driverName){
+        driverClassName = driverName;
+        System.out.println("--> constructoc JdbcFilmDao(String driverName) call");
+    }
+    
     private Connection getConnection() {
         Connection con = null;
         try {

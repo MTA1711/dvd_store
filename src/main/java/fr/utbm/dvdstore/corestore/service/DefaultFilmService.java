@@ -12,7 +12,16 @@ import java.util.List;
 public class DefaultFilmService implements FilmServiceInterface{
     
     private FilmDaoInterface filmDao ;
-
+    
+    public DefaultFilmService(){
+        
+    }
+    
+    public DefaultFilmService(FilmDaoInterface filmDao) {
+        this.filmDao = filmDao;
+        System.out.println("--> constructoc DefaultFilmService(FilmDaoInterface filmDao) call");
+    }
+    
     public FilmDaoInterface getFilmDao() {
         return filmDao;
     }
