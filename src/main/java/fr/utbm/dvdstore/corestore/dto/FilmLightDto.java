@@ -1,10 +1,7 @@
 package fr.utbm.dvdstore.corestore.dto;
 
-import fr.utbm.dvdstore.corestore.entity.Acteur;
-import java.util.Set;
-
 /**
- * DTO for Film
+ * DTO light for Film
  * @author java
  */
 

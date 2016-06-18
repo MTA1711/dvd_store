@@ -4,7 +4,6 @@ import fr.utbm.dvdstore.corestore.dto.FilmDefaultDto;
 import fr.utbm.dvdstore.corestore.dto.FilmLightDto;
 import fr.utbm.dvdstore.corestore.entity.Film;
 import fr.utbm.dvdstore.corestore.repository.HibernateFilmDao;
-import fr.utbm.dvdstore.corestore.repository.JdbcFilmDao;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.logging.Level;
