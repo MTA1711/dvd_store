@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
      
-    <bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.JdbcFilmDao" />
+    <bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.HibernateFilmDao" />
    
     <bean id="defaultFilmService" class="fr.utbm.dvdstore.corestore.service.DefaultFilmService"> 
         <property name="filmDao" ref="filmRepository" />
