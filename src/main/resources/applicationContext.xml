@@ -4,8 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
      
-    <bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.HibernateFilmDao" />
-   
+    <bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.JdbcFilmDao" >
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/DVD_STORE"/>
+        <property name="user" value="java"/>
+        <property name="pwd" value="java"/>
+    </bean>
+    
     <bean id="defaultFilmService" class="fr.utbm.dvdstore.corestore.service.DefaultFilmService"> 
         <property name="filmDao" ref="filmRepository" />
     </bean>

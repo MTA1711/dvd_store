@@ -16,12 +16,17 @@ import java.util.logging.Logger;
  * @author java
  */
 public class JdbcFilmDao implements FilmDaoInterface{
-
+    
+    private String driverClassName;
+    private String url;
+    private String user;
+    private String pwd;
+    
     private Connection getConnection() {
         Connection con = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/DVD_STORE", "java", "java");
+            Class.forName(driverClassName).newInstance();
+            con = (Connection) DriverManager.getConnection(url, user, pwd);
             System.out.println("CONNEXION OK");
         } catch (Throwable e) {
             System.out.println("CONNECTION KO! "+ e.getMessage());
@@ -60,4 +65,37 @@ public class JdbcFilmDao implements FilmDaoInterface{
         List<FilmLightDto> listFilmL = null;
         return listFilmL;
     }
+
+    public String getDriverClassName() {
+        return driverClassName;
+    }
+
+    public void setDriverClassName(String driverClassName) {
+        this.driverClassName = driverClassName;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+    
 }
