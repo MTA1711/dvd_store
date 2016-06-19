@@ -17,6 +17,10 @@ import org.hibernate.Transaction;
  */
 public class HibernateFilmDao implements FilmDaoInterface{
 
+    public HibernateFilmDao() {
+        System.out.println("--> Constructor HibernateFilmDao() call");
+    }
+
     @Override
     public void save(Film f) {
         Session session = HibernateUtil.getSessionFactory().openSession();
