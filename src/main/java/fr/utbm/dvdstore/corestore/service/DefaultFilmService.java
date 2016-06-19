@@ -28,6 +28,7 @@ public class DefaultFilmService implements FilmServiceInterface{
 
     public void setFilmDao(FilmDaoInterface filmDao) {
         this.filmDao = filmDao;
+        System.out.println("--> setFilmDao call");
     }
     
     @Override
