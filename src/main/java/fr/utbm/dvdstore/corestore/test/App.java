@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
     public static void main(String[] args){             
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        //DefaultFilmController fc = (DefaultFilmController) context.getBean("defaultFilmController"); 
-        //fc.recordFilmFromConsoleInput();
+        DefaultFilmController fc = (DefaultFilmController) context.getBean("defaultFilmController"); 
+        fc.recordFilmFromConsoleInput();
     }
 }

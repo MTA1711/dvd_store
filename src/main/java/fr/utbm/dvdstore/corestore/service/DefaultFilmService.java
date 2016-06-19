@@ -6,11 +6,12 @@ import fr.utbm.dvdstore.corestore.entity.Film;
 import fr.utbm.dvdstore.corestore.repository.FilmDaoInterface;
 import fr.utbm.dvdstore.corestore.util.Converter;
 import java.util.List;
+import javax.annotation.Resource;
 
 
 
 public class DefaultFilmService implements FilmServiceInterface{
-    
+    @Resource 
     private FilmDaoInterface filmDao ;
     
     public DefaultFilmService(){
@@ -25,7 +26,7 @@ public class DefaultFilmService implements FilmServiceInterface{
     public FilmDaoInterface getFilmDao() {
         return filmDao;
     }
-
+    //@Resource (name="filmRepository")
     public void setFilmDao(FilmDaoInterface filmDao) {
         this.filmDao = filmDao;
         System.out.println("--> setFilmDao call");
