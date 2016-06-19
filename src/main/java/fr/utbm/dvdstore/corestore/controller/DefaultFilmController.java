@@ -5,6 +5,7 @@ import fr.utbm.dvdstore.corestore.dto.FilmLightDto;
 import fr.utbm.dvdstore.corestore.entity.Acteur;
 import fr.utbm.dvdstore.corestore.entity.Film;
 import fr.utbm.dvdstore.corestore.service.FilmServiceInterface;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -15,7 +16,7 @@ import java.util.Set;
  */
 public class DefaultFilmController {
     
-    private FilmServiceInterface filmService ;
+    private ArrayList <FilmServiceInterface> filmService ;
     
     public void recordFilmFromConsoleInput(){
         Scanner sc=new Scanner(System.in);
@@ -56,7 +57,8 @@ public class DefaultFilmController {
             f1.setActeursSecondaires(list);
         }
         
-        filmService.recordFilmUsingDefaultDto(f1);
+        filmService.get(0).recordFilmUsingDefaultDto(f1);
+        filmService.get(1).recordFilmUsingDefaultDto(f1);
     }
     
     public void getFilmFromConsoleInput(){
@@ -65,23 +67,23 @@ public class DefaultFilmController {
         
         System.out.println("Quel est l'identifiant du film ?");      
         Integer nbe = Integer.parseInt(sc.next());       
-        f1 = filmService.getFilm(nbe);      
+        f1 = filmService.get(0).getFilm(nbe);      
         System.out.println("Film trouvé : ");
         System.out.println(f1);
     }
     
     public void listAllFilmsToConsoleOutput(){
         System.out.println("Liste des films stockés");
-        for ( FilmLightDto  f : filmService.getAllFilm() ){
+        for ( FilmLightDto  f : filmService.get(0).getAllFilm() ){
             System.out.println(f.getTitre());
         }
     }
 
-    public FilmServiceInterface getFilmService() {
+    public ArrayList<FilmServiceInterface> getFilmService() {
         return filmService;
     }
 
-    public void setFilmService(FilmServiceInterface filmService) {
+    public void setFilmService(ArrayList<FilmServiceInterface> filmService) {
         this.filmService = filmService;
     }
     
