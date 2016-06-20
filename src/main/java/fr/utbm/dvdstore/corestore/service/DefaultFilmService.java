@@ -7,11 +7,13 @@ import fr.utbm.dvdstore.corestore.repository.FilmDaoInterface;
 import fr.utbm.dvdstore.corestore.util.Converter;
 import java.util.List;
 import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 
 public class DefaultFilmService implements FilmServiceInterface{
-    @Resource 
+    //@Resource
+    //@Autowired
     private FilmDaoInterface filmDao ;
     
     public DefaultFilmService(){
@@ -27,6 +29,7 @@ public class DefaultFilmService implements FilmServiceInterface{
         return filmDao;
     }
     //@Resource (name="filmRepository")
+    @Autowired
     public void setFilmDao(FilmDaoInterface filmDao) {
         this.filmDao = filmDao;
         System.out.println("--> setFilmDao call");
