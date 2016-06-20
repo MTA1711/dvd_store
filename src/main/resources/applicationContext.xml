@@ -6,24 +6,25 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd" 
         xmlns:context="http://www.springframework.org/schema/context">
-    <context:annotation-config /> 
-    <!--<bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.JdbcFilmDao" name="filmDao">
+    <context:component-scan base-package="fr.utbm.dvdstore"/>
+    <!--<context:annotation-config /> 
+    <bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.JdbcFilmDao" name="filmDao">
         <constructor-arg index="0" type="java.lang.String" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/DVD_STORE"/>
         <property name="user" value="java"/>
         <property name="pwd" value="java"/>
     </bean> -->
     
-    <bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.HibernateFilmDao" />
+    <!--<bean id="filmRepository" class="fr.utbm.dvdstore.corestore.repository.HibernateFilmDao" />
     
-    <bean id="defaultFilmService" class="fr.utbm.dvdstore.corestore.service.DefaultFilmService"/> 
+    <bean id="defaultFilmService" class="fr.utbm.dvdstore.corestore.service.DefaultFilmService"/> -->
     
     <!--<bean id="defaultFilmService2" class="fr.utbm.dvdstore.corestore.service.DefaultFilmService"> 
         <property name="filmDao" ref="filmRepository" />
     </bean> -->
     
-    <bean id= "defaultFilmController"  class="fr.utbm.dvdstore.corestore.controller.DefaultFilmController">
+    <!--<bean id= "defaultFilmController"  class="fr.utbm.dvdstore.corestore.controller.DefaultFilmController">
         <property name="filmService" ref="defaultFilmService"/>
-    </bean>
+    </bean>-->
     
 </beans>

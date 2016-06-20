@@ -8,11 +8,14 @@ import fr.utbm.dvdstore.corestore.service.FilmServiceInterface;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  * 
  * @author java
  */
+@Controller
 public class DefaultFilmController {
     
     private FilmServiceInterface filmService ;
@@ -80,9 +83,10 @@ public class DefaultFilmController {
     public FilmServiceInterface getFilmService() {
         return filmService;
     }
-
+    @Autowired
     public void setFilmService(FilmServiceInterface filmService) {
         this.filmService = filmService;
+        System.out.println("--> setFilmService() call" );
     }
     
 }

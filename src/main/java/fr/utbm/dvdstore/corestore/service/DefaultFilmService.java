@@ -8,9 +8,10 @@ import fr.utbm.dvdstore.corestore.util.Converter;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
-
+@Service
 public class DefaultFilmService implements FilmServiceInterface{
     //@Resource
     //@Autowired
