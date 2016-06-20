@@ -10,16 +10,25 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author java
  */
+@Repository
 public class JdbcFilmDao implements FilmDaoInterface{
-    
+    @Value ("${jdbc.driverClassName}")
     private String driverClassName;
+    
+    @Value ("${jdbc.url}")
     private String url;
+    
+    @Value ("${jdbc.username}")
     private String user;
+    
+    @Value ("${jdbc.password}")
     private String pwd;
     
     public JdbcFilmDao(){

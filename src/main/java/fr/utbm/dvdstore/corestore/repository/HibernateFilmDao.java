@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author java
  */
-@Repository
+//@Repository
 public class HibernateFilmDao implements FilmDaoInterface{
 
     public HibernateFilmDao() {
